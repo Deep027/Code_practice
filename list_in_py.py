@@ -81,3 +81,95 @@ a = [10, 20, 30, 40, 50]
 a[1] = 25 
 
 print(a)
+
+# Removing Elements from List
+# We can remove elements from a list using:
+
+# remove(): Removes the first occurrence of an element.
+# pop(): Removes the element at a specific index or the last element if no index is specified.
+# del statement: Deletes an element at a specified index.
+
+a = [10, 20, 30, 40, 50]
+
+# Removes the first occurrence of 30
+a.remove(30)  
+print("After remove(30):", a)
+
+# Removes the element at index 1 (20)
+popped_val = a.pop(1)  
+print("Popped element:", popped_val)
+print("After pop(1):", a) 
+
+# Deletes the first element (10)
+del a[0]  
+print("After del a[0]:", a)
+
+# Using len()
+# Using Max()
+
+a = [1, 2, 3, 4, 5]
+length = len(a)
+print(length)
+
+a = [10, 24, 76, 23, 12]
+
+# Max() will return the largest in 'a'
+largest = max(a)
+print(largest)
+
+a = [10, 20, 30, 40, 50]
+
+# Swapping elements at index 0 and 4
+# using multiple assignment
+a[0], a[4] = a[4], a[0]
+
+print(a)
+
+a = [10, 20, 30, 40, 50]
+
+# Check if 30 exists in the list
+if 30 in a:
+    print("Element exists in the list")
+else:
+    print("Element does not exist")
+
+# list of animals
+Animals= ["cat", "dog", "tiger"]
+# searching positiion of dog
+print(Animals.index("dog"))
+
+a = [1, 2, 3, 4, 5]
+
+# Reverse the list in-place
+a.reverse()
+print(a)
+
+a = [1, 2, 3]
+b = [4, 5, 6]
+
+# Merge the two lists and assign
+# the result to a new list
+c = a + b
+print(c)
+
+# List Methods
+# Let’s look at different list methods in Python:
+
+# append(): Adds an element to the end of the list.
+# copy(): Returns a shallow copy of the list.
+# clear(): Removes all elements from the list.
+# count(): Returns the number of times a specified element appears in the list.
+# extend(): Adds elements from another list to the end of the current list.
+# index(): Returns the index of the first occurrence of a specified element.
+# insert(): Inserts an element at a specified position.
+# pop(): Removes and returns the element at the specified position (or the last element if no index is specified).
+# remove(): Removes the first occurrence of a specified element.
+# reverse(): Reverses the order of the elements in the list.
+# sort(): Sorts the list in ascending order (by default).
+
+# list slicing:
+# list_name[start : end : step]
+
+# list comprehension
+# [expression for item in iterable if condition]
+

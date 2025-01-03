@@ -31,6 +31,10 @@ class HashTable:
     def __getitem__(self, key):  #index operator built in function to enable [] access to dictionaries
         h = self.get_hash(key)
         return self.arr[h]
+    
+    def __delitem__(self, key):
+        h = self.get_hash(key)
+        self.arr[h] = None
 
 obj_1_of_Hashtable_class = HashTable()
 obj_2_of_Hashtable_class = HashTable()
@@ -43,6 +47,9 @@ print(obj_1_of_Hashtable_class.arr)
 obj_1_of_Hashtable_class.add('march 13', 150.0)
 print(obj_1_of_Hashtable_class.arr)
 obj_1_of_Hashtable_class.add('march 14', 350.0)
+print(obj_1_of_Hashtable_class.arr)
+
+del obj_1_of_Hashtable_class['march 14']
 print(obj_1_of_Hashtable_class.arr)
 
 # after enabling get items and set items 

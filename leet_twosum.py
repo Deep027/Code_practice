@@ -15,4 +15,4 @@ print(obj.twoSum([2,7,11,15], 9))
 print(obj.twoSum([3,2,4], 6))
 
 # loop1 : d= {2: 0}
-# loop2 : d=
+# loop2 : d= {3:0, 2:1, }

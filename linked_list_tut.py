@@ -124,6 +124,10 @@ class LinkedList:
             return size
         else:
             return 0
+    
+    def addTwoNumbers(self, l1):
+        print(l1.data)
+        print(l1.next)
 
 
 obj = LinkedList()
@@ -169,8 +173,10 @@ llist.printLL()
 print("\nLinked list after removing a node:")
 llist.printLL()
 
-print("\nUpdate node Value at Index 0:")
-llist.updateNode('z', 0)
-llist.printLL()
+# print("\nUpdate node Value at Index 0:")
+# llist.updateNode('z', 0)
+# llist.printLL()
 
 print("\nSize of linked list:", llist.sizeOfLL())
+
+llist.addTwoNumbers(llist)

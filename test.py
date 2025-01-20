@@ -25,7 +25,10 @@
 # obj = test()
 # print(obj.root)
 # obj.ins()
-i = 1
-while (i is not 9):
-    print(i)
-    i = i + 1
+# i = 1
+# while (i is not 9):
+#     print(i)
+#     i = i + 1
+
+for i in range(1):
+    print("Deep")

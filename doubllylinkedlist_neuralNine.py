@@ -2,10 +2,12 @@ class Node:
     def __init__(self, value):
        self.value = value
        self.next = None
+       self.previous = None
 
-class LinkedList:
+class DoublyLinkedList:
      def __init__(self):
          self.head = None
+         self.tail = None
 
      def __repr__(self):
          if self.head is None:
@@ -39,16 +41,22 @@ class LinkedList:
      def append(self, value):
          if self.head is None:
              self.head = Node(value)
+             self.tail = self.head
          else:
-             last = self.head
-             while(last.next is not None):
-                 last = last.next
-             last.next = Node(value)
-     
+             last_node = Node(value)
+             last_node.previous = self.tail
+             self.tail.next = last_node
+             self.tail = last_node
+
      def prepend(self, value):
-        first_node = Node(value)
-        first_node.next = self.head
-        self.head = first_node
+        if self.head is None:
+            self.head = Node(value)
+            self.tail = self.head
+        else:
+            first_node = Node(value)
+            first_node.next = self.head
+            self.head.previous = first_node
+            self.head = first_node
      
      def insert(self, value, index):
          if index == 0:
@@ -64,6 +72,9 @@ class LinkedList:
                     last = last.next
                 new_node = Node(value)
                 new_node.next = last.next
+                new_node.previous = last
+                if last.next is not None:
+                    last.next.previous = new_node
                 last.next = new_node
                 
      
@@ -79,6 +90,8 @@ class LinkedList:
              else:
                  while last.next is not None:
                      if (last.next.value == value):
+                         if (last.next.next is not None):
+                             last.next.next.previous = last
                          last.next = last.next.next
                          flag = 1
                          break
@@ -99,6 +112,8 @@ class LinkedList:
             if last.next is None:
                     raise ValueError("Index out of bounds")
             else:
+                if last.next.next is not None:
+                    last.next.next.previous = last
                 last.next = last.next.next
              
      def get(self, index):
@@ -112,18 +127,22 @@ class LinkedList:
          return last.value
      
 if __name__ == "__main__":
-    ll = LinkedList()
+    ll = DoublyLinkedList()
     ll.append(10)
-    ll.append(5)
-    ll.append(18)
-    ll.append(22)
-    ll.append(29)
-
+    ll.insert(5,1)
+    ll.insert(20,1)
+    ll.insert(18,1)
+    ll.insert(22,1)
+    ll.insert(88,1)
+    ll.insert(97,1)
+ 
     ll.prepend(100)
 
     ll.insert(200, 1)
 
-    ll.delete(5)
+    ll.delete(18)
+    ll.delete(22)
+    ll.delete(5)    
 
     ll.pop(1)
 

@@ -15,6 +15,7 @@ class Solution:
                         return False
                 else:
                     return False
+            print(f"the value of stack is {stck} at {i} th loop")
         if (len(stck) > 0):
             return False
         else:
@@ -22,3 +23,16 @@ class Solution:
 
 obj = Solution()
 print(obj.isValid("()"))
+
+            # if (s[i] == "}" and len(stck) > 0):
+            #     if (stck[-1] == "{"):
+            #         stck.pop()
+            #     else:
+            #         return False
+            # else:
+            #     stck.append(s[i])
+            # if (s[i] == "]" and len(stck) > 0):
+            #     if (stck[-1] == "["):
+            #         stck.pop()
+            #     else:
+            #         return False

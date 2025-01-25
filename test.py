@@ -30,5 +30,8 @@
 #     print(i)
 #     i = i + 1
 
-for i in range(1):
-    print("Deep")
+# for i in range(1):
+#     print("Deep")
+
+dic = {1:"deep", 2:"dj"}
+print(dic.keys("deep"))
